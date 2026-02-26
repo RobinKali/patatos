@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
 
     <!-- Main Stylesheet -->
@@ -118,13 +118,13 @@
 
 <body>
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="visually-hidden focusable">Ga naar hoofdinhoud</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- HEADER / NAVIGATION -->
-    <header class="header" id="site-header">
-        <div class="px-container header-container">
+    <header class="site-header" id="site-header">
+        <div class="header-container">
             <a href="/index.html" class="logo" aria-label="PATATOS Home">
-                <span class="logo-text">PATATOS</span>
+                <span class="logo-text">PATATOS</span><span class="logo-dot">.NL</span>
             </a>
 
             <!-- Desktop Nav -->
@@ -132,8 +132,8 @@
                 <ul class="nav-list">
                     <li><a href="/index.html#menu" class="nav-link">Menu</a></li>
                     <li><a href="/index.html#locaties" class="nav-link">Locaties</a></li>
-                    <li><a href="/contact.html" class="btn btn-outline nav-btn">Catering</a></li>
                     <li><a href="/index.html#ons-verhaal" class="nav-link">Ons Verhaal</a></li>
+                    <li><a href="/contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
@@ -146,23 +146,33 @@
                 </button>
             </div>
         </div>
+    </header>
 
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu" id="mobile-menu">
-            <div class="mobile-menu-inner">
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Sluit menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="mobile-menu-content">
+            <nav aria-label="Mobile Navigation">
                 <ul class="mobile-nav-list">
                     <li><a href="/index.html#menu" class="mobile-nav-link">MENU</a></li>
                     <li><a href="/index.html#locaties" class="mobile-nav-link">LOCATIES</a></li>
-                    <li><a href="/contact.html" class="mobile-nav-link">CATERING</a></li>
                     <li><a href="/index.html#ons-verhaal" class="mobile-nav-link">ONS VERHAAL</a></li>
                     <li><a href="/index.html#faq" class="mobile-nav-link">FAQ</a></li>
+                    <li><a href="/contact.html" class="mobile-nav-link">CONTACT</a></li>
                 </ul>
-            </div>
+            </nav>
             <div class="mobile-menu-footer">
                 <a href="#booking-form" class="btn btn-primary block-cta">BOEK DE TRUCK</a>
             </div>
         </div>
-    </header>
+    </div>
+
 
     <main id="main-content">
         <!-- HERO SECTION -->
@@ -298,7 +308,7 @@
                     <ul class="footer-links">
                         <li><a href="/index.html#menu">Menu</a></li>
                         <li><a href="/index.html#locaties">Locaties</a></li>
-                        <li><a href="/contact.html">Catering</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </div>
 
