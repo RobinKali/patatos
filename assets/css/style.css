@@ -319,6 +319,7 @@ button {
 
 .nav-list {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -459,6 +460,21 @@ button {
   width: 100%;
   max-width: 300px;
   margin: 0 auto;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 2rem;
+  right: 5%;
+  color: var(--color-cream);
+  padding: 0.5rem;
+  z-index: 10;
+  transition: transform var(--transition-normal);
+}
+
+.mobile-menu-close:hover {
+  transform: rotate(90deg) scale(1.1);
+  color: var(--color-terracotta);
 }
 
 @media (min-width: 1024px) {
@@ -619,19 +635,26 @@ button {
 .rotating-badge {
   width: 100%;
   height: 100%;
-  animation: spin 20s linear infinite;
+  animation: badge-spin 20s linear infinite;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  transform-origin: center;
+  overflow: visible;
 }
 
 .rotating-badge text {
   fill: var(--color-gold);
-  font-size: 10px;
+  font-size: 11px;
+  /* Slightly larger for readability */
 }
 
-@keyframes spin {
-  100% {
+@keyframes badge-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
     transform: rotate(360deg);
   }
 }
@@ -688,15 +711,14 @@ button {
   }
 
   .hero-badge {
-    width: 110px;
-    height: 110px;
-    bottom: 120px;
-    /* Above the scroll indicator on mobile */
-    right: 20px;
+    width: 80px;
+    height: 80px;
+    bottom: 15px;
+    right: 15px;
   }
 
   .badge-center {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 }
 

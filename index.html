@@ -76,8 +76,8 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="preload" href="/assets/css/style.css" as="style">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="preload" href="/assets/css/style.css?v=1.1" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1.1">
 </head>
 
 <body>
@@ -95,7 +95,7 @@
                 <ul class="nav-list">
                     <li><a href="#menu" class="nav-link">Menu</a></li>
                     <li><a href="#locaties" class="nav-link">Locaties</a></li>
-                    <li><a href="/contact.html" class="btn btn-outline nav-btn">Catering</a></li>
+                    <li><a href="/contact.html" class="nav-link">Catering</a></li>
                     <li><a href="#ons-verhaal" class="nav-link">Ons Verhaal</a></li>
                 </ul>
             </nav>
@@ -113,6 +113,13 @@
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobile-menu">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Sluit menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
         <div class="mobile-menu-content">
             <nav aria-label="Mobile Navigation">
                 <ul class="mobile-nav-list">
@@ -158,8 +165,8 @@
 
             <div class="hero-badge">
                 <div class="badge-center">🍟</div>
-                <svg viewBox="0 0 100 100" class="rotating-badge">
-                    <path id="curve" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+                <svg viewBox="0 0 100 100" class="rotating-badge" preserveAspectRatio="xMidYMid meet">
+                    <path id="curve" d="M 50 13 A 37 37 0 1 1 50 87 A 37 37 0 1 1 50 13" fill="transparent" />
                     <text width="100%">
                         <textPath href="#curve" startOffset="0%" fill="currentColor">
                             • LOADED SINCE 2026 • PATATOS • FRIES & MORE
@@ -665,60 +672,81 @@
                         <h3>Aankomende Stops</h3>
                         <!-- Static Events List -->
                         <div class="events-list" id="events-list">
-                            <div class="event-card" data-lat="52.3749" data-lng="4.8864" data-index="0">
+                            <div class="event-card" data-lat="52.228549" data-lng="6.874183" data-index="0">
+                                <div class="event-badge badge-gold">Vast</div>
+                                <h4 class="event-name">PATATOS Basecamp Enschede</h4>
+                                <div class="event-meta">
+                                    <div class="event-date">📅 Elke Dag | 10:00–22:00</div>
+                                    <div class="event-address">📍 Rigtersbleekstraat 56, Enschede</div>
+                                </div>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=Rigtersbleekstraat+56+Enschede"
+                                    target="_blank" class="event-nav-btn">→ Navigeer</a>
+                            </div>
+
+                            <div class="event-card" data-lat="52.3749" data-lng="4.8864" data-index="1">
                                 <div class="event-badge badge-gold">Markt</div>
                                 <h4 class="event-name">Noordermarkt Amsterdam</h4>
                                 <div class="event-meta">
                                     <div class="event-date">📅 2026-03-08 | 10:00–17:00</div>
                                     <div class="event-address">📍 Noordermarkt, Amsterdam</div>
                                 </div>
-                                <button class="event-nav-btn">→ Navigeer</button>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=Noordermarkt+Amsterdam"
+                                    target="_blank" class="event-nav-btn">→ Navigeer</a>
                             </div>
 
-                            <div class="event-card" data-lat="52.3872" data-lng="4.8754" data-index="1">
+                            <div class="event-card" data-lat="52.3872" data-lng="4.8754" data-index="2">
                                 <div class="event-badge badge-terracotta">Festival</div>
                                 <h4 class="event-name">Rollende Keukens</h4>
                                 <div class="event-meta">
                                     <div class="event-date">📅 2026-05-17 | 12:00–22:00</div>
                                     <div class="event-address">📍 Westergasfabriek, Amsterdam</div>
                                 </div>
-                                <button class="event-nav-btn">→ Navigeer</button>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=Westergasfabriek+Amsterdam"
+                                    target="_blank" class="event-nav-btn">→ Navigeer</a>
                             </div>
 
-                            <div class="event-card" data-lat="52.0907" data-lng="5.1214" data-index="2">
+                            <div class="event-card" data-lat="52.0907" data-lng="5.1214" data-index="3">
                                 <div class="event-badge badge-green">Pop-up</div>
                                 <h4 class="event-name">Foodhallen Utrecht</h4>
                                 <div class="event-meta">
                                     <div class="event-date">📅 2026-04-12 | 11:00–20:00</div>
                                     <div class="event-address">📍 Vredenburg, Utrecht</div>
                                 </div>
-                                <button class="event-nav-btn">→ Navigeer</button>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=Vredenburg+Utrecht"
+                                    target="_blank" class="event-nav-btn">→ Navigeer</a>
                             </div>
 
-                            <div class="event-card" data-lat="51.5888" data-lng="4.7759" data-index="3">
+                            <div class="event-card" data-lat="51.5888" data-lng="4.7759" data-index="4">
                                 <div class="event-badge badge-terracotta">Festival</div>
                                 <h4 class="event-name">Breda Street Food Festival</h4>
                                 <div class="event-meta">
                                     <div class="event-date">📅 2026-06-20 | 13:00–23:00</div>
                                     <div class="event-address">📍 Chassépark, Breda</div>
                                 </div>
-                                <button class="event-nav-btn">→ Navigeer</button>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=Chassépark+Breda"
+                                    target="_blank" class="event-nav-btn">→ Navigeer</a>
                             </div>
 
-                            <div class="event-card" data-lat="51.9225" data-lng="4.4792" data-index="4">
+                            <div class="event-card" data-lat="51.9225" data-lng="4.4792" data-index="5">
                                 <div class="event-badge badge-gold">Vast</div>
                                 <h4 class="event-name">Vaste Spot Rotterdam</h4>
                                 <div class="event-meta">
                                     <div class="event-date">📅 Elke Vrijdag | 11:30–15:00</div>
                                     <div class="event-address">📍 Binnenrotte, Rotterdam</div>
                                 </div>
-                                <button class="event-nav-btn">→ Navigeer</button>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=Binnenrotte+Rotterdam"
+                                    target="_blank" class="event-nav-btn">→ Navigeer</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="events-map-wrapper">
-                        <div id="map" class="google-map"></div>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.141872851486!2d6.871597!3d52.22851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8118041c28f3b%3A0xc3f5c78278f9fdd!2sRigtersbleekstraat%2056%2C%207521%20GL%20Enschede%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1700000000000!5m2!1sen!2snl&q=Rigtersbleekstraat+56+Enschede"
+                            width="100%" height="100%"
+                            style="border:0; filter: grayscale(1) invert(1) contrast(1.2) brightness(0.8);"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -985,8 +1013,7 @@
                     <h3 class="footer-heading">De Truck</h3>
                     <p class="footer-desc">PATATOS serveert ambachtelijke loaded fries en street food. Eerlijke
                         ingrediënten van lokale regeneratieve boerderijen, vers bereid op de straat.</p>
-                    <a href="https://instagram.com/patatosos" target="_blank"
-                        class="footer-social-link">@patatosos</a>
+                    <a href="https://instagram.com/patatosos" target="_blank" class="footer-social-link">@patatosos</a>
                     <div class="social-icons">
                         <a href="#" aria-label="Instagram" class="social-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
