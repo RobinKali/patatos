@@ -1,5 +1,5 @@
 <?php
-// /php/faq-data.php
+// /assets/php/faq-data.php
 
 $faq_categories = [
     [
@@ -52,12 +52,37 @@ $faq_categories = [
                 'answer' => 'Onze prijzen hangen af van de groepsgrootte, de locatie, en het gekozen menu. Vraag een offerte aan en we maken binnen 48 uur een voorstel op maat.'
             ],
             [
+                'question' => 'Verhuren jullie de truck ook voor kleinere groepen?',
+                'answer' => 'Voor groepen onder de 50 personen hanteren we een minimum omzetbedrag. Neem even contact op via hello@patatos.nl om de mogelijkheden voor jouw specifieke evenement te bespreken.'
+            ],
+            [
                 'question' => 'Hoe ver van tevoren moet ik boeken?',
                 'answer' => 'Voor het zomerseizoen (mei-september) raden we aan minstens 3 tot 6 maanden van tevoren te boeken, aangezien we snel vol zitten. Voor andere maanden kun je ons korter van tevoren proberen!'
             ],
             [
                 'question' => 'Kunnen we het menu aanpassen?',
                 'answer' => 'Zeker, we denken graag mee over een specifiek menu-item dat past bij het thema van je evenement. Laat het ons weten bij je aanvraag!'
+            ]
+        ]
+    ],
+    [
+        'category' => 'BETALING & DUURZAAMHEID',
+        'items' => [
+            [
+                'question' => 'Kan ik met pin betalen bij de truck?',
+                'answer' => 'Ja, we zijn een "cashless" truck. Je kunt bij ons uitsluitend betalen met pin, creditcard of contactloos via je telefoon/watch voor een snelle en veilige afhandeling.'
+            ],
+            [
+                'question' => 'Hoe duurzaam is jullie verpakking?',
+                'answer' => 'Al onze bakjes, vorkjes en servetten zijn 100% composteerbaar en gemaakt van gerecycled materiaal. We streven naar een zero-waste workflow op elke locatie.'
+            ],
+            [
+                'question' => 'Kan ik mijn eigen bakje meenemen?',
+                'answer' => 'Zeker! We moedigen "bring your own" aan. Als je je eigen herbruikbare bakje meeneemt, geven we je graag een kleine duurzaamheidskorting op je loaded fries.'
+            ],
+            [
+                'question' => 'Verkopen jullie ook drinken?',
+                'answer' => 'Ja, we hebben een selectie van biologische frisdranken, lokaal gebrouwen kombucha en mineraalwater in glazen flessen of recyclebare blikjes.'
             ]
         ]
     ]

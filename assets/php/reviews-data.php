@@ -1,5 +1,5 @@
 <?php
-// /php/reviews-data.php
+// /assets/php/reviews-data.php
 
 $reviews = [
     ['name' => 'Milou V.', 'city' => 'Amsterdam', 'stars' => 5, 'text' => 'De beste loaded fries die ik ooit heb gehad. De truffle rain is absurd lekker. Ze stonden op de Noordermarkt en de rij was het meer dan waard.', 'platform' => 'Google'],

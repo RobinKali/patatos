@@ -1,5 +1,5 @@
 <?php
-// /php/booking-handler.php
+// /assets/php/booking-handler.php
 
 header('Content-Type: application/json');
 
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'message' => $message
     ];
 
-    $filename = __DIR__ . '/../bookings.json';
+    $filename = __DIR__ . '/../../bookings.json';
     $bookings = [];
     if (file_exists($filename)) {
         $existing = json_decode(file_get_contents($filename), true);

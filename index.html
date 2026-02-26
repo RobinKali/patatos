@@ -76,8 +76,8 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="preload" href="/css/style.css" as="style">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preload" href="/assets/css/style.css" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
@@ -88,7 +88,7 @@
     <header class="site-header" id="site-header">
         <div class="header-container">
             <a href="#" class="logo">
-                <span class="logo-text">PATATOS</span><span class="logo-dot">.OS</span>
+                <span class="logo-text">PATATOS</span><span class="logo-dot">.NL</span>
             </a>
 
             <nav class="desktop-nav" aria-label="Main Navigation">
@@ -132,6 +132,8 @@
     <main id="main-content">
         <!-- SECTION 2: HERO -->
         <section class="hero-section">
+            <img src="/assets/media/patatos-truck.webp" alt="PATATOS Foodtruck" class="hero-bg-image">
+
             <!-- Noise Overlay -->
             <div class="hero-noise"></div>
             <!-- Neon Glow Background -->
@@ -144,34 +146,26 @@
                         <span class="hero-line">SINCE</span>
                         <span class="hero-line accent-terracotta">2026.</span>
                     </h1>
-                    <p class="hero-subtitle">Loaded fries. Street burgers. Croquetten van het land.</p>
+                    <p class="hero-subtitle">PATATOS. From the ground to the streets.</p>
 
                     <div class="hero-actions">
                         <a href="#boek" class="btn btn-primary btn-large">BOEK DE TRUCK</a>
                         <a href="#menu" class="btn btn-outline btn-large">BEKIJK HET MENU</a>
                     </div>
-                </div>
 
-                <div class="hero-image-col">
-                    <div class="hero-image-wrapper">
-                        <!-- Placeholder image from Unsplash for the truck -->
-                        <!-- Actually CSS will apply grayscale and rotation -->
-                        <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&q=80&w=800&h=1000"
-                            alt="PATATOS Foodtruck" class="hero-image" loading="eager" decoding="async">
-
-                        <div class="hero-badge">
-                            <svg viewBox="0 0 100 100" class="rotating-badge">
-                                <path id="curve" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                                    fill="transparent" />
-                                <text width="100%">
-                                    <textPath href="#curve" startOffset="0%" fill="currentColor">
-                                        • LOADED SINCE 2026 • PATATOS • FRIES & MORE
-                                    </textPath>
-                                </text>
-                            </svg>
-                        </div>
-                    </div>
                 </div>
+            </div>
+
+            <div class="hero-badge">
+                <div class="badge-center">🍟</div>
+                <svg viewBox="0 0 100 100" class="rotating-badge">
+                    <path id="curve" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+                    <text width="100%">
+                        <textPath href="#curve" startOffset="0%" fill="currentColor">
+                            • LOADED SINCE 2026 • PATATOS • FRIES & MORE
+                        </textPath>
+                    </text>
+                </svg>
             </div>
 
             <div class="scroll-indicator">
@@ -187,8 +181,8 @@
         <section class="story-section" id="ons-verhaal">
             <div class="story-container">
                 <div class="story-image-col scroll-reveal">
-                    <img src="https://images.unsplash.com/photo-1583314986427-bcbc27e366a7?auto=format&fit=crop&q=80&w=800&h=1000"
-                        alt="Chef preparing loaded fries" class="story-image" loading="lazy" decoding="async">
+                    <img src="/assets/media/chef-os.png" alt="Chef OS preparing PATATOS" class="story-image"
+                        loading="lazy" decoding="async">
                 </div>
 
                 <div class="story-text-col scroll-reveal slide-right">
@@ -479,7 +473,7 @@
     <!-- Scripts -->
     <!-- Google Maps API (placeholder key) -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap"></script>
-    <script src="/js/main.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 </body>
 
 </html>

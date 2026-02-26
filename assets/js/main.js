@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             try {
-                const response = await fetch('/php/booking-handler.php', {
+                const response = await fetch('/assets/php/booking-handler.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -191,44 +191,54 @@ const escapeHtml = (unsafe) => {
 };
 
 // 7.1 Render Masonry Grid
-const masonryItems = [
-    { name: 'Earth Cuts', desc: 'Raw skin fries, organic sunflower oil, sea salt', price: '€6.50', img: 'https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&q=80&w=600&h=800' },
-    { name: 'The Forest Stack', desc: 'Burger, wild mushrooms, garlic mayo, hemp seeds', price: '€14.00', img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=600&h=600' },
-    { name: 'Muddy Croquettes', desc: 'Heritage potato, chickpea flour, parsley broth', price: '€9.50', img: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&q=80&w=600&h=900' },
-    { name: 'Truffle Rain', desc: 'Loaded fries, truffle oil, parmesan snow, chives', price: '€11.00', img: 'https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&q=80&w=600&h=700' },
-    { name: 'The Chorizo Bomb', desc: 'Loaded fries, spicy chorizo, aioli, pickled onion', price: '€10.50', img: 'https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&q=80&w=600&h=600' },
-    { name: 'Green Patch', desc: 'Plant-based loaded fries, herb cream, roasted veg', price: '€9.00', img: 'https://images.unsplash.com/photo-1518013431117-eb1465fa5752?auto=format&fit=crop&q=80&w=600&h=800' },
-    { name: 'The Golden Ratio', desc: 'Classic fries, gold curry sauce, crispy shallots', price: '€7.50', img: 'https://images.unsplash.com/photo-1630431341973-02e1b662ce3b?auto=format&fit=crop&q=80&w=600&h=900' },
-    { name: 'Smoke Signal', desc: 'BBQ pulled jackfruit on fries, slaw, smoked paprika', price: '€10.00', img: 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&q=80&w=600&h=700' },
-    { name: 'Midnight Stack', desc: 'Double smash burger, black bun, caramelized onion', price: '€15.50', img: 'https://images.unsplash.com/photo-1586816001966-79b736744398?auto=format&fit=crop&q=80&w=600&h=800' },
-];
-
-const renderMasonry = () => {
+const renderMasonry = async () => {
     const gridContainer = document.getElementById('menu-grid');
     if (!gridContainer) return;
 
-    let html = '';
-    masonryItems.forEach((item, index) => {
-        const delay = (index % 3) * 0.1;
-        html += `
-        <div class="masonry-item scroll-reveal" style="transition-delay: ${delay}s">
-            <img src="${escapeHtml(item.img)}" alt="${escapeHtml(item.name)}" loading="lazy" decoding="async">
-            <div class="masonry-overlay">
-                <div class="masonry-content">
-                    <h3>${escapeHtml(item.name)}</h3>
-                    <p>${escapeHtml(item.desc)}</p>
-                    <span class="masonry-price">${escapeHtml(item.price)}</span>
+    // Loading State
+    gridContainer.innerHTML = `
+        <div class="loading-grid">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+    `;
+
+    try {
+        const response = await fetch('/assets/php/menu-data.php', { headers: { 'Accept': 'application/json' } });
+        if (!response.ok) throw new Error('API Error');
+        const items = await response.json();
+
+        let html = '';
+        items.forEach((item, index) => {
+            const delay = (index % 3) * 0.1;
+            html += `
+            <div class="masonry-item scroll-reveal" style="transition-delay: ${delay}s">
+                <img src="${escapeHtml(item.img)}" alt="${escapeHtml(item.name)}" loading="lazy" decoding="async">
+                <div class="masonry-overlay">
+                    <div class="masonry-content">
+                        <h3>${escapeHtml(item.name)}</h3>
+                        <p>${escapeHtml(item.desc)}</p>
+                        <span class="masonry-price">${escapeHtml(item.price)}</span>
+                    </div>
                 </div>
-            </div>
-        </div>`;
-    });
-    gridContainer.innerHTML = html;
+            </div>`;
+        });
+        gridContainer.innerHTML = html;
+
+        // Trigger reveal for new elements
+        setTimeout(reinitObservers, 100);
+
+    } catch (err) {
+        console.error('Error fetching menu:', err);
+        gridContainer.innerHTML = '<p class="error-msg text-center">Het menu kon niet worden geladen. Probeer het later opnieuw.</p>';
+    }
 };
 
 // 7.2 Fetch and Render FAQ
 const fetchFaq = async () => {
     try {
-        const response = await fetch('/php/faq-data.php', { headers: { 'Accept': 'application/json' } });
+        const response = await fetch('/assets/php/faq-data.php', { headers: { 'Accept': 'application/json' } });
         if (!response.ok) throw new Error('API Error');
         const data = await response.json();
 
@@ -336,7 +346,7 @@ const initFaqInteractions = () => {
 // 7.3 Fetch and Render Reviews
 const fetchReviews = async () => {
     try {
-        const response = await fetch('/php/reviews-data.php', { headers: { 'Accept': 'application/json' } });
+        const response = await fetch('/assets/php/reviews-data.php', { headers: { 'Accept': 'application/json' } });
         if (!response.ok) throw new Error('API Error');
         const data = await response.json();
 
@@ -380,7 +390,7 @@ const fetchReviews = async () => {
 // 7.4 Fetch and Render Events
 const fetchEvents = async () => {
     try {
-        const response = await fetch('/php/events-data.php', { headers: { 'Accept': 'application/json' } });
+        const response = await fetch('/assets/php/events-data.php', { headers: { 'Accept': 'application/json' } });
         if (!response.ok) throw new Error('API Error');
         window.PATATOS_EVENTS = await response.json();
 

@@ -1,5 +1,5 @@
 <?php
-// /php/events-data.php
+// /assets/php/events-data.php
 
 $events = [
     ['name' => 'Noordermarkt Amsterdam', 'date' => '2026-03-08', 'time' => '10:00–17:00', 'address' => 'Noordermarkt, Amsterdam', 'lat' => 52.3749, 'lng' => 4.8864, 'type' => 'Markt'],
